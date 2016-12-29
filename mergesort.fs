@@ -13,4 +13,5 @@ let rec mergesort (xs: list<int>) =
         let left, right = List.splitAt n xs
         merge (mergesort left, mergesort right)
 
-mergesort [100;9;2;13]
+let r = System.Random()
+mergesort (List.init 10 (fun index -> r.Next 500))
