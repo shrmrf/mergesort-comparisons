@@ -4,7 +4,7 @@
 */
 fn merge_split(l1: &mut Vec<i32>) {
     // println!("len: {}, list: {:?}", l1.len(), l1);
-    if l1.len() <= 1{
+    if l1.len() <= 1 {
         return;
     }
     else {
@@ -46,7 +46,14 @@ pub fn mergesort(l1: &mut Vec<i32>) {
 }
 
 fn main () {
-    fn fact(x: u32) -> u32 { if x==0 {1} else {x * fact(x - 1)} }
+    // use closure :)
+    let fact = |x: u32| -> u32 {
+        match x {
+            0 => 1,
+            _ => fact(x - 1) * x
+        }
+    }
+    // fn fact(x: u32) -> u32 { if x==0 {1} else {x * fact(x - 1)} }
     println!("{}", fact(5));
 
 
